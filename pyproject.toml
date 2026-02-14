@@ -1,7 +1,19 @@
 [project]
 name = "dsa-foundations-in-python"
 version = "0.1.0"
-description = "Add your description here"
+description = "A structured, implementation-focused learning repository for mastering Data Structures and Algorithms using Python 3.12+"
 readme = "README.md"
-requires-python = ">=3.10"
-dependencies = []
+requires-python = ">=3.12"
+dependencies = [
+    "typing-extensions>=4.9.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+    "black>=24.0.0",
+    "flake8>=7.0.0",
+    "isort>=5.13.0",
+    "mypy>=1.8.0",
+]

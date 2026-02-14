@@ -1,34 +1,23 @@
 # File Naming Conventions
 
-## Python Files (Backend)
+## Python Files
 
-- Use lowercase with underscores: `rag_service.py`, `embedding_generator.py`, `vector_store.py`
-- Keep names descriptive: `document_service.py`, `auth_routes.py`, `query_handler.py`
-- Follow existing patterns in codebase
+- Use lowercase with underscores: `implementations.py`, `problems.py`, `examples.py`
+- Test files: `test_<module_or_topic>.py` (e.g. `test_main.py`, `test_arrays.py`)
+- Keep names descriptive; follow patterns in README and CONTRIBUTING
 
-## TypeScript/React Files (Frontend)
+## Module Folders
 
-- **Components**: Use PascalCase: `PolicySearch.tsx`, `ChatInterface.tsx`, `Login.tsx`, `AdminDashboard.tsx`
-- **API Client**: Use camelCase: `apiClient.ts`
-- **Types/Interfaces**: Use PascalCase: `User.ts`, `PolicyDocument.ts`, `QueryResult.ts`
-- Keep names descriptive and clear
+- Format: `##_descriptive_name/` (e.g. `02_arrays_and_strings/`, `07_hashing_and_problem_patterns/`)
+- Number 01–07 for the seven curriculum modules
 
 ## Documentation Files
 
-- Use descriptive names with numbering: `01_abstract.md`, `02_requirements.md`
-- Number sequentially when order matters
-- Use hyphens for multi-word names in URLs
+- In modules: `notes.md`, `theory.md`, `concepts.md`
+- In docs/: descriptive names; number when order matters (e.g. `01_abstract.md`)
 
 ## Configuration Files
 
-- `config.py`: Backend configuration
-- `package.json`: Frontend dependencies
-- `pyproject.toml`: Python dependencies
-- `uv.lock`: Dependency lockfile
-- `.env`: Environment variables (not committed)
-- `schema.sql`: Database schema
-
-## Database Files
-
-- `schema.sql`: Database schema definition
-- Migration files: Use timestamp prefix: `20260108_initial_schema.sql`
+- `pyproject.toml`: Project and tool config (pytest, black, coverage)
+- `.python-version`: Python version (3.12)
+- `requirements.txt`: Optional pip install list (see CONTRIBUTING)

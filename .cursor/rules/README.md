@@ -1,8 +1,8 @@
 ---
 title: Cursor Rules Index
 version: 1.0
-last_updated: 2026-02-12
-project: Enterprise Policy Assistant
+last_updated: 2026-02-14
+project: DSA Foundations in Python
 ---
 
 ## Cursor Rules

@@ -1,20 +1,20 @@
 # Repository Structure
 
-**Project**: Enterprise Policy Assistant (RAG-Based)
+**Project**: DSA Foundations in Python
 
-> **📖 Single Source of Truth**: For complete and up-to-date repository structure, see [docs/12_repository_structure.md](../../docs/12_repository_structure.md)
+> **📖 Single Source of Truth**: For complete and up-to-date repository structure, see [README.md](../../README.md).
 
 ## Quick Reference
 
 **Key Directories:**
 
-- `src/frontend/` - React.js 19 with TypeScript (Presentation Layer)
-- `src/backend/` - FastAPI REST API (Application Layer)
-- `infra/` - Infrastructure configuration (Qdrant, PostgreSQL; Podman-compatible)
-- `docs/` - Project documentation
+- `01_complexity_analysis/` … `07_hashing_and_problem_patterns/` – Learning modules (notes, implementations, problems)
+- `src/` – Entry point and shared Python code
+- `tests/` – Unit tests (pytest)
+- `docs/` – Supporting documentation
 
 **Key Entry Points:**
 
-- `src/frontend/src/main.tsx` - Frontend entry point
-- `src/backend/app/main.py` - Backend entry point (FastAPI app)
-- `infra/docker-compose.yml` - Qdrant + PostgreSQL (Podman-compatible)
+- `src/main.py` – Main entry point
+- `tests/` – Test suite (run with `pytest`)
+- Module folders – `notes.md`, `theory.md`, `implementations.py`, `problems.py` per README

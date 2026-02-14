@@ -1,56 +1,19 @@
 # Integration Guidelines
 
-## Module Integration
+## Project Scope
 
-### Frontend → Backend
-- React components → REST API calls → FastAPI endpoints
-- TypeScript API client handles authentication and requests
-- JWT tokens stored in localStorage with secure handling
+This repository is **DSA Foundations in Python** – a single codebase (Python 3.12+) with no separate frontend/backend/services. Integration points are:
 
-### Backend → Databases
-- SQLAlchemy ORM for PostgreSQL operations (user data, metadata)
-- Qdrant client for vector database operations (embeddings, similarity search)
-- Hybrid architecture: PostgreSQL for structured data, Qdrant for vectors
+- **Modules** (01_… through 07_…): Theory (markdown) and implementations (Python) live in module folders.
+- **Tests**: `tests/` use pytest; run from repo root; coverage targets `src/`.
+- **Tooling**: black, isort, flake8, mypy (optional) as per CI and CONTRIBUTING.
 
-### Backend → AI Service
-- FastAPI services → OpenAI API
-- RAG pipeline: document chunking → embedding generation → vector storage
-- Semantic search retrieves relevant context from Qdrant
-- LLM generates grounded answers based on retrieved context
+## Dependencies
 
-## External Dependencies
+- **Runtime**: Python ≥ 3.12; `typing-extensions` (see pyproject.toml).
+- **Dev**: pytest, pytest-cov, black, flake8, isort, mypy (optional-dependencies).
 
-### Frontend
-- React 19 with TypeScript
-- Tailwind CSS for styling
-- API client for backend communication
+## Data and Flow
 
-### Backend
-- FastAPI: Web framework
-- SQLAlchemy: ORM for PostgreSQL
-- Pydantic: Data validation
-- openai: OpenAI API client
-- qdrant-client: Qdrant Vector Database client
-- PyJWT: JWT authentication
-- PostgreSQL: Relational database
-- Qdrant: Vector database
-
-## Data Flow (RAG Pipeline)
-
-1. **Document Ingestion**: User uploads policy document (PDF/Word/Text)
-2. **Chunking**: Backend splits document into semantic chunks with overlap
-3. **Embedding**: OpenAI generates vector embeddings for each chunk
-4. **Storage**: Embeddings stored in Qdrant, metadata in PostgreSQL
-5. **Query**: User submits natural language question
-6. **Retrieval**: System searches Qdrant for relevant chunks (cosine similarity)
-7. **Generation**: LLM receives query + context and generates grounded answer
-8. **Response**: Answer with source citations returned to frontend
-
-## API Integration Points
-
-- `/api/auth/login`: User authentication
-- `/api/auth/register`: User registration
-- `/api/policies/ingest`: Document ingestion and vectorization
-- `/api/policies/query`: Natural language policy query (RAG)
-- `/api/policies/list`: List ingested policy documents
-- `/api/admin/*`: Admin operations
+- No external APIs or databases. All content is files (markdown, Python).
+- Adding content: place in the correct module folder; add tests in `tests/`; ensure zero-copy and complexity analysis where applicable.

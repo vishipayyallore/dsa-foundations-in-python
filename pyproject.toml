@@ -17,3 +17,16 @@ dev = [
     "isort>=5.13.0",
     "mypy>=1.8.0",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["*/tests/*", ".venv/*", "venv/*"]
+
+[tool.coverage.report]
+fail_under = 70
+exclude_lines = ["pragma: no cover", "def __repr__", "if __name__ == .__main__.:"]

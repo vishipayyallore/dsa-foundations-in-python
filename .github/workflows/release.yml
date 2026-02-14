@@ -1,0 +1,37 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "DSA Foundations in Python ${{ github.ref_name }}"
+          tag_name: ${{ github.ref_name }}
+          generate_release_notes: true
+          body: |
+            ## Data Structures and Algorithms - Release ${{ github.ref_name }}
+            
+            This release includes implementations, problems, and learning resources for mastering DSA with Python.
+            
+            ### What's in this release
+            - Data structure implementations
+            - Algorithm implementations  
+            - Practice problems and solutions
+            - Complexity analysis
+            - Unit tests
+            
+            See the full changelog below for details.
+

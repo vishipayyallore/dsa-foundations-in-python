@@ -1,0 +1,20 @@
+# Repository Structure
+
+**Project**: Enterprise Policy Assistant (RAG-Based)
+
+> **📖 Single Source of Truth**: For complete and up-to-date repository structure, see [docs/12_repository_structure.md](../../docs/12_repository_structure.md)
+
+## Quick Reference
+
+**Key Directories:**
+
+- `src/frontend/` - React.js 19 with TypeScript (Presentation Layer)
+- `src/backend/` - FastAPI REST API (Application Layer)
+- `infra/` - Infrastructure configuration (Qdrant, PostgreSQL; Podman-compatible)
+- `docs/` - Project documentation
+
+**Key Entry Points:**
+
+- `src/frontend/src/main.tsx` - Frontend entry point
+- `src/backend/app/main.py` - Backend entry point (FastAPI app)
+- `infra/docker-compose.yml` - Qdrant + PostgreSQL (Podman-compatible)

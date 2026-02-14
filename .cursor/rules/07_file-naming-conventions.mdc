@@ -1,0 +1,34 @@
+# File Naming Conventions
+
+## Python Files (Backend)
+
+- Use lowercase with underscores: `rag_service.py`, `embedding_generator.py`, `vector_store.py`
+- Keep names descriptive: `document_service.py`, `auth_routes.py`, `query_handler.py`
+- Follow existing patterns in codebase
+
+## TypeScript/React Files (Frontend)
+
+- **Components**: Use PascalCase: `PolicySearch.tsx`, `ChatInterface.tsx`, `Login.tsx`, `AdminDashboard.tsx`
+- **API Client**: Use camelCase: `apiClient.ts`
+- **Types/Interfaces**: Use PascalCase: `User.ts`, `PolicyDocument.ts`, `QueryResult.ts`
+- Keep names descriptive and clear
+
+## Documentation Files
+
+- Use descriptive names with numbering: `01_abstract.md`, `02_requirements.md`
+- Number sequentially when order matters
+- Use hyphens for multi-word names in URLs
+
+## Configuration Files
+
+- `config.py`: Backend configuration
+- `package.json`: Frontend dependencies
+- `pyproject.toml`: Python dependencies
+- `uv.lock`: Dependency lockfile
+- `.env`: Environment variables (not committed)
+- `schema.sql`: Database schema
+
+## Database Files
+
+- `schema.sql`: Database schema definition
+- Migration files: Use timestamp prefix: `20260108_initial_schema.sql`

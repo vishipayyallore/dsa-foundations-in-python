@@ -1,0 +1,56 @@
+# Integration Guidelines
+
+## Module Integration
+
+### Frontend → Backend
+- React components → REST API calls → FastAPI endpoints
+- TypeScript API client handles authentication and requests
+- JWT tokens stored in localStorage with secure handling
+
+### Backend → Databases
+- SQLAlchemy ORM for PostgreSQL operations (user data, metadata)
+- Qdrant client for vector database operations (embeddings, similarity search)
+- Hybrid architecture: PostgreSQL for structured data, Qdrant for vectors
+
+### Backend → AI Service
+- FastAPI services → OpenAI API
+- RAG pipeline: document chunking → embedding generation → vector storage
+- Semantic search retrieves relevant context from Qdrant
+- LLM generates grounded answers based on retrieved context
+
+## External Dependencies
+
+### Frontend
+- React 19 with TypeScript
+- Tailwind CSS for styling
+- API client for backend communication
+
+### Backend
+- FastAPI: Web framework
+- SQLAlchemy: ORM for PostgreSQL
+- Pydantic: Data validation
+- openai: OpenAI API client
+- qdrant-client: Qdrant Vector Database client
+- PyJWT: JWT authentication
+- PostgreSQL: Relational database
+- Qdrant: Vector database
+
+## Data Flow (RAG Pipeline)
+
+1. **Document Ingestion**: User uploads policy document (PDF/Word/Text)
+2. **Chunking**: Backend splits document into semantic chunks with overlap
+3. **Embedding**: OpenAI generates vector embeddings for each chunk
+4. **Storage**: Embeddings stored in Qdrant, metadata in PostgreSQL
+5. **Query**: User submits natural language question
+6. **Retrieval**: System searches Qdrant for relevant chunks (cosine similarity)
+7. **Generation**: LLM receives query + context and generates grounded answer
+8. **Response**: Answer with source citations returned to frontend
+
+## API Integration Points
+
+- `/api/auth/login`: User authentication
+- `/api/auth/register`: User registration
+- `/api/policies/ingest`: Document ingestion and vectorization
+- `/api/policies/query`: Natural language policy query (RAG)
+- `/api/policies/list`: List ingested policy documents
+- `/api/admin/*`: Admin operations

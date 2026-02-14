@@ -35,7 +35,7 @@ Project focus and documentation accuracy rules
 
 ### `06_cross-domain-integration.mdc`
 
-Planned N-Tier integration and data flow (frontend/backend/database)
+Integration guidelines (modules, tests, tooling; DSA single-codebase scope)
 
 ### `07_file-naming-conventions.mdc`
 

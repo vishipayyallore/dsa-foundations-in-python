@@ -1,0 +1,19 @@
+# DSA Foundations in Python - Dependencies
+# Python 3.12+ required
+
+# Testing
+pytest>=8.0.0
+pytest-cov>=4.1.0
+
+# Code Quality
+black>=24.0.0
+flake8>=7.0.0
+isort>=5.13.0
+mypy>=1.8.0
+
+# Type Hints (if needed for Python < 3.9 compatibility)
+typing-extensions>=4.9.0
+
+# Optional: For visualization or advanced data structures
+# numpy>=1.26.0
+# matplotlib>=3.8.0

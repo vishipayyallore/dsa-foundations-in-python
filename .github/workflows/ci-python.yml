@@ -1,0 +1,77 @@
+# Python CI - DSA Testing and Quality Checks
+# Tests Data Structures and Algorithms implementations with pytest
+# Project structure: Module folders (01_complexity_analysis/, 02_arrays_and_strings/, etc.)
+# Focus: Complexity analysis, clean implementations, comprehensive testing
+
+name: Python CI
+
+on:
+  workflow_dispatch:  # Manual trigger
+  push:
+    branches: [main]
+    tags:
+      - "v*"
+    paths:
+      - '**/*.py'
+      - 'tests/**'
+      - '.github/workflows/ci-python.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - '**/*.py'
+      - 'tests/**'
+      - '.github/workflows/ci-python.yml'
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest pytest-cov black flake8 isort mypy
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Check formatting with Black
+        run: black --check --diff .
+
+      - name: Check import sorting with isort
+        run: isort --check-only --diff .
+
+      - name: Lint with flake8
+        run: |
+          # Stop the build if there are Python syntax errors or undefined names
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics --exclude=.venv,venv,.git,__pycache__
+          # Check for style violations
+          flake8 . --count --max-complexity=15 --max-line-length=88 --statistics --exclude=.venv,venv,.git,__pycache__
+
+      - name: Type checking with mypy (if configured)
+        continue-on-error: true
+        run: |
+          if [ -f mypy.ini ] || [ -f setup.cfg ] || [ -f pyproject.toml ]; then
+            mypy . --exclude='\.venv|venv|\.git' || echo "Type checking completed with warnings"
+          else
+            echo "Skipping mypy - no configuration found"
+          fi
+
+      - name: Run tests with pytest
+        run: |
+          pytest --cov=. --cov-report=xml --cov-report=term-missing --cov-fail-under=70 -v --ignore=.venv --ignore=venv
+
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v4
+        if: always()
+        with:
+          file: ./coverage.xml
+          flags: unittests
+          name: dsa-coverage
+          fail_ci_if_error: false

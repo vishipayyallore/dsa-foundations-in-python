@@ -343,6 +343,41 @@ paket-files/
 **/__pycache__/
 *.pyc
 
+# Python Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Python Testing
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+
+# Python Type Checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Python IDEs
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Python Distribution
+*.egg
+*.whl
+
 # Cake - Uncomment if you are using it
 #tools/**
 #!tools/packages.config

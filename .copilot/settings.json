@@ -1,0 +1,47 @@
+{
+  "version": "1.0",
+  "project": {
+    "name": "DSA Foundations in Python",
+    "type": "educational-repository",
+    "focus": ["data-structures", "algorithms", "problem-solving", "interview-preparation"],
+    "language": "Python 3.12+"
+  },
+  "settings": {
+    "enableCopilot": true,
+    "autoSuggest": true,
+    "language": "en",
+    "complexity_analysis_required": true,
+    "test_driven_development": true,
+    "zero_copy_policy": true
+  },
+  "code_standards": {
+    "style_guide": "PEP 8",
+    "formatter": "black",
+    "line_length": 88,
+    "type_hints_required": true,
+    "docstrings_required": true,
+    "complexity_comments_required": true
+  },
+  "testing": {
+    "framework": "pytest",
+    "coverage_minimum": 90,
+    "coverage_tool": "pytest-cov"
+  },
+  "modules": [
+    "01_complexity_analysis",
+    "02_arrays_and_strings",
+    "03_recursion_and_backtracking",
+    "04_linked_list_stack_queue",
+    "05_searching_and_sorting",
+    "06_trees_and_binary_search_tree",
+    "07_hashing_and_problem_patterns"
+  ],
+  "learning_priorities": [
+    "Big-O complexity analysis",
+    "Pattern recognition",
+    "Trade-off analysis",
+    "Clean implementation",
+    "Test-driven learning"
+  ]
+}
+

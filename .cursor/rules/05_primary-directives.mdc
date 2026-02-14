@@ -1,0 +1,36 @@
+# Primary Directives
+
+## Project Focus
+
+This is a **RAG-based N-Tier web application** that:
+- Enables semantic search of enterprise policy documents
+- Uses OpenAI for embeddings and response generation
+- Uses Qdrant Vector Database for similarity search
+- Implements FastAPI REST API for backend
+- Uses React.js 19 with TypeScript for frontend
+- Implements JWT authentication with role-based access control
+
+## Current State
+
+- ✅ Project planning and architecture defined
+- ✅ Documentation complete (README, review documents)
+- ✅ Repository structure established
+- ⏳ Backend implementation (FastAPI + RAG pipeline) - In Progress
+- ⏳ Frontend implementation (React.js) - In Progress
+- ⏳ Qdrant integration - In Progress
+
+## Documentation Accuracy
+
+- Documentation must accurately reflect planned implementation
+- Architecture diagrams must match actual system design
+- API endpoints must be documented correctly
+- No misleading technology descriptions
+
+## Code Maintenance
+
+- Maintain N-Tier architecture separation
+- Keep frontend and backend decoupled
+- Use TypeScript for type safety
+- Follow RESTful API design principles
+- Ensure secure API key handling
+- Implement proper RAG pipeline with chunking and embeddings

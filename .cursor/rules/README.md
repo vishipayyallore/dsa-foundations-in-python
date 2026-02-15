@@ -1,8 +1,8 @@
 ---
 title: Cursor Rules Index
 version: 1.0
-last_updated: 2026-02-12
-project: Enterprise Policy Assistant
+last_updated: 2026-02-14
+project: DSA Foundations in Python
 ---
 
 ## Cursor Rules
@@ -35,7 +35,7 @@ Project focus and documentation accuracy rules
 
 ### `06_cross-domain-integration.mdc`
 
-Planned N-Tier integration and data flow (frontend/backend/database)
+Integration guidelines (modules, tests, tooling; DSA single-codebase scope)
 
 ### `07_file-naming-conventions.mdc`
 

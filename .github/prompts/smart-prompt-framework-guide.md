@@ -1,178 +1,68 @@
-# S.M.A.R.T. Prompt Framework for GitHub Copilot Coding Agents
+# S.M.A.R.T. Prompt Framework for DSA Foundations in Python
 
-**Enterprise Policy Assistant Edition** - Framework for creating high-quality coding agent instructions aligned with prompt engineering best practices and OpenAI + Qdrant integration patterns.
-
----
-
-## 🎯 **The S.M.A.R.T. Framework**
-
-Use this framework to create highly effective coding agent instructions:
-
-```text
-S - Specific Role Definition (Senior Python Developer, Frontend Engineer, AI Integration Specialist, etc.)
-M - Mission-Critical Requirements (What must be accomplished with measurable outcomes)
-A - Audience-Aware Communication (Team expertise level, architectural maturity, domain context)
-R - Response Format Control (Code structure, architecture patterns, documentation style)
-T - Task-Oriented Constraints (Technology stack, architectural patterns, forbidden actions)
-```
+Framework for creating high-quality coding agent instructions for this DSA learning repository.
 
 ---
 
-## 🏛️ **RAG System Alignment**
+## The S.M.A.R.T. Framework
 
-When creating prompts, consider:
+- **S** – Specific Role (e.g. Python DSA implementer, interview-style problem solver)
+- **M** – Mission-critical requirements (measurable outcomes: correctness, complexity, tests)
+- **A** – Audience (learners, interview prep, engineers strengthening foundations)
+- **R** – Response format (code structure, docstrings, complexity comments, tests)
+- **T** – Task constraints (Python 3.12+, PEP 8, zero-copy, no external solution paste)
 
-- **Prompt Pattern**: Is this instruction-based, role-based, chain-of-thought, or evaluation?
-- **Use Case Context**: What task type (policy retrieval, document ingestion, embeddings, authentication)?
-- **OpenAI Integration**: Which integration pattern (Python SDK, ChatCompletion, Embeddings)?
-- **Qdrant Integration**: Vector search, payload filtering, or collections management?
+---
 
-## 🏗️ **Advanced Problem Statement Template**
+## DSA-Specific Alignment
 
-Use this enhanced template for coding agent tasks:
+When creating prompts for this repo:
+
+- **Content type**: Data structure implementation, algorithm, or problem solution
+- **Module**: One of 01_complexity_analysis … 07_hashing_and_problem_patterns
+- **Requirements**: Type hints, docstrings, time/space complexity comments, edge cases, tests
+
+## Problem Statement Template
 
 ```markdown
-## ROLE DEFINITION
+## ROLE
 
-You are a [Specific Role] specializing in [Technology Stack] with expertise in [Domain Areas]
+You are implementing [data structure / algorithm / problem] for the DSA Foundations in Python repository.
 
 ## MISSION
 
-[Clear, specific objective with measurable outcomes]
+[Clear objective, e.g. implement X with O(n) time and O(1) space, with tests]
 
-## CONTEXT
+## CONSTRAINTS
 
-[Brief overview of current situation and progress made]
-
-## CURRENT STATUS
-
-- **Progress Made**: [Specific achievements and metrics]
-- **Main Issue**: [Root cause analysis]
-- **Files Affected**: [List specific files]
-
-## REMAINING WORK
-
-### 1. [Priority Task Name] (Priority N)
-
-- **Problem**: [Specific technical issue]
-- **Current Error**: [Exact error messages]
-- **Solution Approach**: [Concrete implementation steps]
-- **Files to Modify**: [Specific file paths]
-
-## TECHNICAL CONSTRAINTS
-
-- **🚨 CRITICAL**: [Non-negotiable requirements]
-- **Framework**: [Technology stack requirements]
-- **Dependencies**: [Package/version constraints]
-
-## RESPONSE FORMAT REQUIREMENTS
-
-- [Specific code structure expectations]
-- [Documentation requirements]
-- [Testing requirements]
-
-## WHAT NOT TO DO
-
-- ❌ [Explicit forbidden actions with reasoning]
-
-## WHAT TO DO
-
-- ✅ [Explicit required actions with priority]
+- Python 3.12+, PEP 8, type hints, docstrings
+- Zero-copy: original implementation only
+- Include complexity analysis and edge-case handling
 
 ## SUCCESS CRITERIA
 
-[Measurable outcomes with acceptance criteria]
+- Implementation in correct module folder
+- Tests in tests/ with happy path and edge cases
+- black, isort, flake8 pass
 ```
 
-## 🎭 **Role-Based Specialization Examples**
+## Role Examples for This Repo
 
-### **For Backend (Python/FastAPI) Development:**
+**Data structure implementation:**
 
-```markdown
-ROLE: You are a Senior Python Developer specializing in FastAPI REST API development, OpenAI API integration, and Qdrant Vector Database
-EXPERTISE FOCUS: FastAPI route handlers, Pydantic models, async programming, RAG pipelines
-```
+- Implement core operations with complexity comments; add tests and usage example in docstring.
 
-### **For Frontend (TypeScript/React) Development:**
+**Algorithm / problem solution:**
 
-```markdown
-ROLE: You are a Frontend Engineer specializing in React 19 with TypeScript, chat interfaces, and document management UI
-EXPERTISE FOCUS: React hooks, component composition, state management, Tailwind CSS
-```
+- Provide brute-force and optimized approach; document time/space complexity; add tests and edge cases.
 
-### **For AI Integration & RAG Pipeline:**
+**Critical constraints:**
 
-```markdown
-ROLE: You are an AI Integration Specialist specializing in OpenAI Embeddings, Qdrant Vector Search, and RAG Architecture
-EXPERTISE FOCUS: 
-- Embedding generation and vector storage
-- Semantic search optimization
-- Context-aware prompt construction
-- Document chunking strategies
-```
+- Use Python 3.12+ only. Do not copy solutions from external sites. Follow PEP 8 and repository file-naming conventions.
 
-## 🚨 **Critical Constraint Guidelines**
+## PR Success (this repo)
 
-### **Framework/Package Versions:**
-
-```markdown
-- 🚨 CRITICAL: Use Python 3.12+ ONLY
-- 🚨 CRITICAL: Use React 19+ with TypeScript
-- ❌ DO NOT modify pyproject.toml to downgrade packages
-```
-
-### **Effective Instruction Patterns**
-
-- ✅ "Implement the `/ingest` endpoint in FastAPI to process PDF files and store embeddings in Qdrant."
-- ✅ "Create a React component `ChatInterface.tsx` that displays cited sources from the RAG response."
-
-## 🤖 **OpenAI & Qdrant Integration Framework**
-
-### **RAG Integration Template:**
-
-```markdown
-## RAG INTEGRATION FRAMEWORK
-
-### Integration Requirements
-- **API Key Management**: Environment variables (OPENAI_API_KEY, QDRANT_URL)
-- **Chunking**: Implement intelligent text chunking with overlap
-- **Embeddings**: Use text-embedding-3-small (or configured model)
-- **Vector Search**: Query Qdrant with cosine similarity
-
-### Success Criteria
-- Documents successfully ingested and vectorized
-- Semantic search returns relevant context
-- LLM generates accurate, grounded answers
-- No API keys exposed
-```
-
-## 📋 **Universal PR Success Template**
-
-```markdown
-## 🎯 MANDATORY SUCCESS CRITERIA
-
-### Backend Build Requirements
-```powershell
-# MUST PASS: Backend tests
-cd src/backend
-pytest tests/ -v
-```
-
-### Frontend Build Requirements
-
-```powershell
-# MUST PASS: Frontend build
-cd src/frontend
-npm run build
-```
-
-## 🚀 **Enterprise Policy Assistant Example**
-
-```markdown
-ROLE: You are a Senior Full-Stack Developer specializing in RAG applications
-MISSION: Implement document ingestion pipeline using FastAPI, OpenAI, and Qdrant
-TASK CONSTRAINTS:
-- 🚨 CRITICAL: Maintain N-Tier architecture separation
-- Architecture: Frontend -> FastAPI -> OpenAI/Qdrant
-- Quality Standards: Zero build errors
-```
+- `pytest` passes (with `--cov=src` if applicable)
+- `black .` and `isort .` applied
+- `flake8` clean
+- Zero-copy policy followed; complexity analysis included where applicable

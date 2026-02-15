@@ -2,35 +2,28 @@
 
 ## Project Focus
 
-This is a **RAG-based N-Tier web application** that:
-- Enables semantic search of enterprise policy documents
-- Uses OpenAI for embeddings and response generation
-- Uses Qdrant Vector Database for similarity search
-- Implements FastAPI REST API for backend
-- Uses React.js 19 with TypeScript for frontend
-- Implements JWT authentication with role-based access control
+This is a **DSA (Data Structures and Algorithms) learning repository** that:
+- Provides structured modules from complexity analysis to hashing and problem patterns
+- Emphasizes original implementations, complexity analysis, and clean Python 3.12+ code
+- Supports interview preparation and problem-solving methodology
+- Enforces a zero-copy policy (no verbatim copy from solution sites)
 
 ## Current State
 
-- ✅ Project planning and architecture defined
-- ✅ Documentation complete (README, review documents)
-- ✅ Repository structure established
-- ⏳ Backend implementation (FastAPI + RAG pipeline) - In Progress
-- ⏳ Frontend implementation (React.js) - In Progress
-- ⏳ Qdrant integration - In Progress
+- ✅ Project planning and documentation complete (README, CONTRIBUTING)
+- ✅ Repository structure and CI (pytest, black, isort, flake8) established
+- ⏳ Module content (01_… through 07_…) – In progress
+- ⏳ Test coverage and practice sets – In progress
 
 ## Documentation Accuracy
 
-- Documentation must accurately reflect planned implementation
-- Architecture diagrams must match actual system design
-- API endpoints must be documented correctly
-- No misleading technology descriptions
+- README and docs must match actual layout and behaviour
+- Module structure and file naming must follow CONTRIBUTING and README
+- No misleading technology or project descriptions
 
 ## Code Maintenance
 
-- Maintain N-Tier architecture separation
-- Keep frontend and backend decoupled
-- Use TypeScript for type safety
-- Follow RESTful API design principles
-- Ensure secure API key handling
-- Implement proper RAG pipeline with chunking and embeddings
+- Follow PEP 8; use type hints and docstrings
+- Include time/space complexity comments for solutions
+- Place code in correct module folders and tests in `tests/`
+- Enforce zero-copy policy; keep content original and transformative

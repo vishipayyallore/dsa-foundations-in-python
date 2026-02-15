@@ -1,0 +1,32 @@
+[project]
+name = "dsa-foundations-in-python"
+version = "0.1.0"
+description = "A structured, implementation-focused learning repository for mastering Data Structures and Algorithms using Python 3.12+"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "typing-extensions>=4.9.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+    "black>=24.0.0",
+    "flake8>=7.0.0",
+    "isort>=5.13.0",
+    "mypy>=1.8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["*/tests/*", ".venv/*", "venv/*"]
+
+[tool.coverage.report]
+fail_under = 70
+exclude_lines = ["pragma: no cover", "def __repr__", "if __name__ == .__main__.:"]

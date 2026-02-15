@@ -1,15 +1,15 @@
 # Work Items Index
 
-This index provides a single numbered backlog view for the Enterprise Policy Assistant project.
+This index provides a single numbered backlog view for **DSA Foundations in Python**.
 
 ## Completed
 
-1. [01_fastapi_core_endpoints.md](01_fastapi_core_endpoints.md) – FastAPI core backend with 6 endpoints + OpenAPI/Swagger
+_(None yet.)_
 
 ## Pending / In Progress
 
-_(Add new work items here as phase-NNN-description.md and link below.)_
+_(Add new work items here as 01_description.md, 02_description.md, and link below.)_
 
 ## Deprecated
 
-_(Move superseded or cancelled work items here.)_
+- Work items from other projects (e.g. Enterprise Policy Assistant) have been removed. See `source-material/deprecated/` for reference if needed.

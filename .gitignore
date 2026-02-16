@@ -376,6 +376,7 @@ dmypy.json
 
 # Python Distribution
 *.egg
+.egg
 *.whl
 
 # Cake - Uncomment if you are using it
